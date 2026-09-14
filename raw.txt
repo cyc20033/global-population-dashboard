@@ -1,0 +1,10 @@
+{
+    "source": "UN World Population Prospects",
+    "unit": "Billion",
+    "data": {
+        "2024": 8.16,
+        "2030": 8.55,
+        "2050": 9.66,
+        "2100": 10.35
+    }
+}
