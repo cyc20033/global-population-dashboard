@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Population & Geopolitical Risk Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Landing Page / Hero -->
+  <header class="hero">
+    <h1>Global Population & Geopolitical Risk Dashboard</h1>
+    <p class="tagline">研究主張：全球人口增長趨緩與區域地緣政治動盪，將重新定義未來三十年的資源分配與供應鏈韌性。</p>
+    <div class="author-info">
+      <span>作者：[你的名字]</span> | <span>Department of FinTech / AI Applications</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 世界人口預測區塊 -->
+    <section class="card">
+      <h2>📊 世界人口預測 (2024 - 2100)</h2>
+      <p class="source-tag">資料來源：UN World Population Prospects</p>
+      
+      <div class="stats-grid">
+        <div class="stat-box"><h3>2024</h3><p>8.16 億</p></div>
+        <div class="stat-box"><h3>2030</h3><p>8.55 億</p></div>
+        <div class="stat-box"><h3>2050</h3><p>9.66 億</p></div>
+        <div class="stat-box"><h3>2100</h3><p>10.35 億</p></div>
+      </div>
+
+      <div class="analytics-box" id="json-analytics">
+        <h3>Python 自動計算分析（載入中...）</h3>
+      </div>
+
+      <div class="img-container">
+        <!-- 可替換為 AI 產生的圖表圖片 -->
+        <img src="https://picsum.photos/800/400" alt="World Population Trend Concept" id="pop-chart">
+        <p class="caption">圖標示來源：AI Generated Concept Art via Midjourney / DALL-E</p>
+      </div>
+    </section>
+
+    <!-- 伊朗地緣政治風險分析區塊 -->
+    <section class="card">
+      <h2>🛡️ 伊朗地緣政治風險矩陣 (Iran Risk Matrix)</h2>
+      
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>風險因子</th>
+              <th>機率</th>
+              <th>影響程度</th>
+              <th>類別</th>
+              <th>資料來源 / 依據</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>霍爾木茲海峽封鎖風險</td>
+              <td><span class="badge badge-medium">中</span></td>
+              <td><span class="badge badge-high">高</span></td>
+              <td><strong class="fact">事實資料</strong></td>
+              <td>EIA (每日約2100萬桶石油通過此海峽)</td>
+            </tr>
+            <tr>
+              <td>核子協議 (JCPOA) 破局與制裁加碼</td>
+              <td><span class="badge badge-high">高</span></td>
+              <td><span class="badge badge-high">高</span></td>
+              <td><strong class="fact">事實資料</strong></td>
+              <td>IAEA 監測報告、UN 決議文</td>
+            </tr>
+            <tr>
+              <td>代理人衝突擴大 (Middle East Escalation)</td>
+              <td><span class="badge badge-high">高</span></td>
+              <td><span class="badge badge-medium">中</span></td>
+              <td><span class="infer">推論</span></td>
+              <td>基於近年智庫 (CSIS, Chatham House) 戰略分析</td>
+            </tr>
+            <tr>
+              <td>內部政局動盪與經濟劇烈通膨</td>
+              <td><span class="badge badge-medium">中</span></td>
+              <td><span class="badge badge-medium">中</span></td>
+              <td><span class="infer">推論</span></td>
+              <td>根據 IMF 通膨數據與歷史抗議事件鏈接推估</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 方法論區塊 -->
+    <section class="card">
+      <h2>⚙️ 方法論與 AI 驗證 (Methodology)</h2>
+      <div class="methodology-content">
+        <h3>1. AI 工具使用說明</h3>
+        <p>本專案使用 ChatGPT / Claude 進行 HTML/CSS 樣式構建、Python 數據統計邏輯生成，以及地緣政治風險因子的初步文獻整理。</p>
+
+        <h3>2. 資料驗證流程與抗幻覺機制</h3>
+        <ul>
+          <li><strong>交叉比對：</strong> 人口數據同時檢視 UN WPP 與 Our World in Data，若不同模型給予數值差異，統一採納聯合國 (UN) 中位數預測值為準。</li>
+          <li><strong>事實與推論分離：</strong> 嚴格將客觀統計數據（如海峽運輸量、IAEA 報告）標示為「事實」，而對未來的局勢發展標示為「推論」，避免 AI 將預測直接包裝為事實。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // 動態載入 cleaned.json 數據
+    fetch('./data/cleaned.json')
+      .then(res => res.json())
+      .then(data => {
+        const analytics = data.analytics;
+        document.getElementById('json-analytics').innerHTML = `
+          <h3>Python 數據運算成果 (` + data.metadata.source + `)</h3>
+          <ul>
+            <li><strong>人口平均數 (2024-2100)：</strong> ${analytics.mean_population} 億</li>
+            <li><strong>總成長率 (2024-2100)：</strong> ${analytics.total_growth_rate_pct}%</li>
+            <li><strong>CAGR (2024-2050 複合年均成長率)：</strong> ${analytics.cagr_2024_2050_pct}%</li>
+            <li><strong>CAGR (2024-2100 複合年均成長率)：</strong> ${analytics.cagr_2024_2100_pct}%</li>
+          </ul>
+        `;
+      })
+      .catch(err => {
+        console.error('JSON 載入失敗:', err);
+      });
+  </script>
+</body>
+</html>
