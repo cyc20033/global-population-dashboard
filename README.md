@@ -1,7 +1,7 @@
 # global-population-dashboard
 # Global Population & Geopolitical Risk Dashboard
 
-## 📌 專案簡介!
+## 📌 專案簡介!!
 本專案為 Department of FinTech / AI Applications 進階作業，旨在結合 Python 數據統計處理與前端網頁開發，呈現全球人口趨勢與伊朗地緣政治風險評估。
 
 
