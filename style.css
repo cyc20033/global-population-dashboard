@@ -1,0 +1,87 @@
+:root {
+  --bg-color: #f4f7f6;
+  --card-bg: #ffffff;
+  --primary-color: #1a365d;
+  --accent-color: #2b6cb0;
+  --text-color: #2d3748;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.hero h1 { margin: 0 0 1rem; font-size: 2rem; }
+.hero .tagline { font-size: 1.1rem; max-width: 800px; margin: 0 auto 1rem; opacity: 0.9; }
+.hero .author-info { font-size: 0.9rem; opacity: 0.8; }
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat-box {
+  background: #edf2f7;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.stat-box h3 { margin: 0; font-size: 1rem; color: #4a5568; }
+.stat-box p { margin: 0.5rem 0 0; font-size: 1.5rem; font-weight: bold; color: var(--accent-color); }
+
+.analytics-box {
+  background: #ebf8ff;
+  border-left: 4px solid var(--accent-color);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.img-container { text-align: center; margin-top: 1.5rem; }
+.img-container img { max-width: 100%; height: auto; border-radius: 6px; }
+.caption { font-size: 0.85rem; color: #718096; margin-top: 0.5rem; }
+
+.table-responsive { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin-top: 1rem; text-align: left; }
+th, td { padding: 0.75rem; border-bottom: 1px solid #e2e8f0; }
+th { background-color: #edf2f7; }
+
+.badge { padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+.badge-high { background: #fed7d7; color: #9b2c2c; }
+.badge-medium { background: #feebc8; color: #9c4221; }
+
+.fact { color: #2b6cb0; }
+.infer { color: #d69e2e; }
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.5rem; }
+  .card { padding: 1rem; }
+}
